@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <title>Avenged Sevenfold - Album</title>
+    <style>
+        /* CSS yang sudah ada */
+:root {
+    --primary-color: #ff3333;
+    --background-color: #1a1a1a;
+    --text-color: #fff;
+    --card-background: #333;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Responsiveness */
+header {
+    background-color: rgba(15, 15, 15, 0.9);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Container for header items */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Metal Mania', cursive;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #ffffff;
+}
+
+/* Navbar and Links */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Main content and grid layout */
+main {
+    flex-grow: 1;
+    padding: 80px 5% 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.album-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.album-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.album-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.album-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+}
+
+.album-info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.listen-btn {
+    display: inline-block;
+    margin-top: auto;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.listen-btn:hover {
+    background-color: #ff6666;
+}
+
+footer {
+    background-color: #0f0f0f;
+    color: #777;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+}
+
+/* Tambahan CSS untuk responsif */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    main {
+        padding: 100px 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .album-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 20px;
+    }
+
+    .album-card img {
+        height: 200px;
+    }
+
+    .album-info h3 {
+        font-size: 1.1em;
+    }
+
+    .album-info p {
+        font-size: 0.8em;
+    }
+
+    .listen-btn {
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .album-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+
+    .album-card img {
+        height: 150px;
+    }
+
+    .album-info h3 {
+        font-size: 1em;
+    }
+
+    .album-info p {
+        font-size: 0.7em;
+    }
+
+    .listen-btn {
+        padding: 5px 10px;
+    }
+}
+ </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">A7X TRIBUTE</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Band Member.html">Band Member</a></li>
+                    <li><a href="Album.html">Album</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Albums</h2>
+
+        <div class="album-grid">
+            <div class="album-card">
+                <img src="sounding the seventh trumpet.jpg" alt="Sounding The Seventh Trumpet">
+                <div class="album-info">
+                    <h3>Sounding The Seventh Trumpet</h3>
+                    <p>Release Date: January 31, 2001</p>
+                    <a href="https://open.spotify.com/album/3Pi6o8NqDPlEBilGeMKi8q?si=cfb91fae95d54a12" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="walking the fallen.jpg" alt="Walking The Fallen">
+                <div class="album-info">
+                    <h3>Walking The Fallen</h3>
+                    <p>Release Date: August 26, 2003</p>
+                    <a href="https://open.spotify.com/album/3qyVLEW74vRMvVxNHjwKhk?si=c5d0ea70c8bc4dd9" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="city of evil.jpg" alt="City Of Evil">
+                <div class="album-info">
+                    <h3>City Of Evil</h3>
+                    <p>Release Date: June 6, 2005</p>
+                    <a href="https://open.spotify.com/album/55tK4Ab7XHTOKkw0xDz3AA?si=6bdb5095714d4203" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="avanged sevenfold.jpg" alt="Avenged Sevenfold">
+                <div class="album-info">
+                    <h3>Avenged Sevenfold</h3>
+                    <p>Release Date: October 26, 2007</p>
+                    <a href="https://open.spotify.com/album/3Id3VUk9jSKBD1guNo1buF?si=Mx12ab8jTgyte5wIfJijlA" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="nightmare..jpg" alt="Nightmare">
+                <div class="album-info">
+                    <h3>Nightmare</h3>
+                    <p>Release Date: July 26, 2010</p>
+                    <a href="https://open.spotify.com/album/1kZNgA27ewArSfE17yog8U?si=XqWzTkyXTu-l3dOMQFAzFw" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="hail to king..png" alt="Hail To The King">
+                <div class="album-info">
+                    <h3>Hail To The King</h3>
+                    <p>Release Date: August 23, 2013</p>
+                    <a href="https://open.spotify.com/album/0ks45m1bsP2JsZpM5D2FFA?si=TZbDYzIfRtKdMuv1_liNbQ" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="the-stage..jpg" alt="The Stage">
+                <div class="album-info">
+                    <h3>The Stage</h3>
+                    <p>Release Date: October 28, 2016</p>
+                    <a href="https://open.spotify.com/album/0OJ2cB135AqvHEtfXifM5D?si=AyzPBp9JSYCjH2AkeJdcXw" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="diamonds in the rough.jpg" alt="Diamonds In The Rough">
+                <div class="album-info">
+                    <h3>Diamonds In The Rough</h3>
+                    <p>Release Date: February 7, 2020</p>
+                    <a href="https://open.spotify.com/album/6VcCunBnnw4BVkCit5rk7d?si=UxOzrX0STGep3KB8uULWjA" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+
+            <div class="album-card">
+                <img src="life is but a dream.png" alt="Life Is But A Dream">
+                <div class="album-info">
+                    <h3>Life Is But A Dream</h3>
+                    <p>Release Date: June 2, 2023</p>
+                    <a href="https://open.spotify.com/album/50YNY0xy9uJ0U9eFQBdLJa?si=2652f9c4744648e5" class="listen-btn">Listen Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Avenged Sevenfold Tribute. All rights reserved.</p>
+    </footer>
+</body>
+</html>
