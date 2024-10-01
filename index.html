@@ -3,44 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A7X Tribute - The Deathbat Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">A7X Tribute</a>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="Band Member.html">Band Member</a>
-            <a href="Album.html">Album</a>
-            <a href="Contact.html">Contact</a>
-        </nav>
-    </header>
-
     <div class="showcase">
         <div class="video-container">
-            <video autoplay muted loop playsinline>
-                <source src="vidio for home.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <video src="Video for login.mp4" autoplay muted loop id="myVideo"></video>
         </div>
         <div class="content">
-            <div class="hero-content">
-                <h1>The A7X Experience</h1>
-                <p>Relive the legend of Avenged Sevenfold</p>
-                <a href="about.html" class="cta-button">Explore Our Tribute</a>
+            <!-- Form as a popup in the center -->
+            <div class="login-popup">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit" id="loginButton">Login</button>
+                </form>
+                <p>Or sign in with</p>
+                <div class="social-buttons">
+                    <button class="google">Google</button>
+                    <button class="apple">Apple</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="social-icons">
-        <a href="#" class="fab fa-facebook-f"></a>
-        <a href="#" class="fab fa-twitter"></a>
-        <a href="#" class="fab fa-instagram"></a>
-        <a href="#" class="fab fa-youtube"></a>
-    </div>
+    <script>
+        const form = document.getElementById("loginForm");
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+
+        form.addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevents the default form submission behavior
+
+    if (username.value === "wisnugacor666" && email.value === "wisnuganteng28@gmail.com" && password.value === "12345") {
+        console.log("Login successful!");
+        window.location.href = "index.html"; // Redirect to the new page
+    } else {
+        console.log("Login failed!");
+        alert("Paswword salah lur");
+        password.value = ""; // Clear the password field
+        email.value = "";    // Clear the email field
+        username.value = ""; // Clear the username field
+    }
+});
+
+    </script>
 </body>
 </html>
