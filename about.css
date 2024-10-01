@@ -65,28 +65,23 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-/* Band Members */
 .band-members {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: space-around; /* Mengatur jarak antara elemen */
+    flex-wrap: wrap; /* Supaya foto menyesuaikan layar kecil, dan tidak terlalu rapat */
     padding: 20px;
-    margin-top: 20px;
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .member {
     text-align: center;
-    width: 18%;
-    margin-bottom: 20px;
+    flex: 1 1 20%; /* Mengatur ukuran tiap anggota band (20% dari lebar kontainer) */
+    margin: 10px;
 }
 
-.member img {
-    width: 100%; /* Responsif, ukuran akan mengikuti ukuran kontainer */
-    max-width: 200px; /* Batas maksimal ukuran gambar */
+.band-member-image {
+    max-width: 100%; /* Supaya gambar tidak melebihi ukuran kontainer */
     height: auto;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    border-radius: 8px; /* Menambahkan efek rounded pada gambar (opsional) */
 }
 
 .member h3 {
