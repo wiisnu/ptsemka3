@@ -12,7 +12,7 @@ body {
 }
 
 /* Header */
-header {
+.site-header {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px 50px;
     display: flex;
@@ -25,7 +25,14 @@ header {
     z-index: 1000;
 }
 
-header h1 {
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.site-header h1 {
     font-size: 2em;
     color: #fff;
     font-family: 'Metal Mania', cursive;
@@ -33,16 +40,16 @@ header h1 {
     letter-spacing: 2px;
 }
 
-nav ul {
+.site-header nav ul {
     list-style: none;
     display: flex;
 }
 
-nav ul li {
+.site-header nav ul li {
     margin-left: 30px;
 }
 
-nav ul li a {
+.site-header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
@@ -50,16 +57,16 @@ nav ul li a {
     transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
+.site-header nav ul li a:hover {
     color: #ff3333;
 }
 
 /* Hero Image */
 .hero-image {
-    background-image: url('about section.jpg'); /* Ganti dengan path gambar yang kamu gunakan */
+    background-image: url('about section.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Sesuaikan tinggi layar agar proporsional */
+    height: 100vh;
     width: 100%;
     position: relative;
     margin-bottom: 30px;
@@ -75,21 +82,21 @@ nav ul li a:hover {
 
 .member {
     display: flex;
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center the image and text horizontally */
-    margin: 10px; /* Add some margin between members */
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
 }
 
 .band-member-image {
-    width: 150px; /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
 }
 
 .member h3 {
-    margin-top: 10px; /* Add some margin between image and text */
-    text-align: center; /* Center the text horizontally */
+    margin-top: 10px;
+    text-align: center;
 }
 
 /* Prime Member Title */
@@ -130,48 +137,60 @@ nav ul li a:hover {
 }
 
 /* Responsive Styles */
-
-/* Untuk Tablet dan Desktop */
-@media (min-width: 768px) {
-    .band-members {
-        justify-content: space-between;
-    }
-
-    .member {
-        width: 22%; /* Sesuaikan lebar untuk layar lebih besar */
-    }
-
-    .prime-member-title {
-        font-size: 2.5em;
+@media (max-width: 1200px) {
+    .site-header {
+        padding: 15px 30px;
     }
 }
 
-/* Untuk Layar Kecil (Mobile) */
-@media (max-width: 767px) {
+@media (max-width: 992px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .site-header {
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width: 480px) {
     .hero-image {
-        height: 50vh; /* Kurangi tinggi hero image untuk layar kecil */
+        height: 40vh;
     }
 
     .prime-member-title {
-        font-size: 2em;
-        margin-top: 20px;
+        font-size: 1.8em;
     }
 
     .about-paragraphs {
-        flex-direction: column; /* Ubah dari dua kolom menjadi satu kolom */
-        gap: 20px;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .about-paragraphs .column {
-        width: 100%; /* Buat kolom penuh di layar kecil */
-        padding: 15px;
+        width: 100%;
+        padding: 10px;
     }
 
     .band-members {
-        justify-content: center;
+        flex-direction: column;
     }
 
     .member {
-        width: 45%; }  
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .member img {
+        max-width: 100px;
+    }
 }
-   
